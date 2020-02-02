@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Container from './components/Container';
+import DealItem from './components/DealItem';
+import api from './services/api';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand">Peixe Urbano - Ofertas </Link>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <Link to={'/'} className="nav-link">Home</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <br/>
+  
+  const [deals, setDeals] = useState([]);
 
-        </div>
-      </Router>
-    </div>
+  useEffect(() => {
+    async function loadDeals() {
+      const response = await api.get('/deals');
+
+      setDeals(response.data);
+    }
+
+    loadDeals();
+  }, []);
+
+  const main = (
+    <main>
+      <ul>
+        { deals ? deals.map(deal => ( <DealItem key={deal._id} deal={deal} />  )) : "" }
+      </ul>
+    </main>
+  );
+
+  return (
+    <Container children={main} />
   );
 }
 
