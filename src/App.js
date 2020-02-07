@@ -20,16 +20,14 @@ function App() {
     loadDeals();
   }, []);
 
-  const main = (
-    <main>
-      <ul>
-        { deals ? deals.map(deal => ( <DealItem key={deal._id} deal={deal} />  )) : "" }
-      </ul>
-    </main>
-  );
-
   return (
-    <Container children={main} />
+    <Container children={(
+      <main>
+        <ul>
+          { deals ? deals.map(deal => ( <DealItem key={deal._id} deal={deal} />  )) : "" }
+        </ul>
+      </main>
+    )} />
   );
 }
 

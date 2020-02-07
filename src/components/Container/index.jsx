@@ -17,7 +17,12 @@ function Container({ children }) {
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to={'/'} className="nav-link">Home</Link>
-                <Link to={'/deals'} className="nav-link">Deals</Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/deal'} className="nav-link">Deal</Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/buy-option'} className="nav-link">Buy Option</Link>
               </li>
             </ul>
           </div>

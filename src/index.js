@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import DealForm from './components/DealForm';
+import BuyOptionForm from './components/BuyOptionForm';
+
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
@@ -11,7 +13,8 @@ ReactDOM.render(
     <Router>
         <Switch>
             <Route path="/" exact={true} component={App} />
-            <Route path="/deals" component={DealForm} />
+            <Route path="/deal" component={DealForm} />
+            <Route path="/buy-option" component={BuyOptionForm} />
         </Switch>
     </Router>
     , document.getElementById('root'));
