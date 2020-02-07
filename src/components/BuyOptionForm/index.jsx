@@ -39,10 +39,10 @@ function BuyOptionForm() {
     return (
         <Container children={(
             <>
-                <div className="form-deal-title">
-                    <strong>Cadastre a opção de oferta</strong>
-                </div>
                 <div className="form-deal"> 
+                    <div className="form-deal-title">
+                        <strong>Cadastre a opção de oferta</strong>
+                    </div>
                     <form onSubmit={handleSubmit}>
 
                         <div className="input-group">

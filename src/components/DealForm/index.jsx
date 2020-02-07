@@ -118,7 +118,7 @@ function DealForm({ onSubmit }) {
                         <button type="submit">Salvar</button>
                     </form>
                 </div>
-                <TableContainer component={Paper}>
+                <TableContainer component={Paper} className="table-deals">
                     <Table className={classes.table} aria-label="simple table">
                         <TableHead>
                         <TableRow>
